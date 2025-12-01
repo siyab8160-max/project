@@ -6,7 +6,8 @@
 body {
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(to top, rgb(153, 59, 75), rgb(143, 66, 143));
+    /* background: linear-gradient(to top, rgb(153, 59, 75), rgb(143, 66, 143)); */
+    background-color: lightblue;
     padding: 10px;
 }
 
