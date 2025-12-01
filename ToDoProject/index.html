@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="todo-app">
+        <h2>To-Do List <img src="icon.png"></h2>
+        <div class="row">
+            <input type="text" id="input-box" placeholder="Add your Text">
+            <button>Add Task</button>
+        </div>
+        <ul id="list-container">
+
+        </ul>
+    </div>
+    <script>
+        let myButton = document.querySelector('button');
+        myButton.addEventListener('click', (event) => {
+
+            let listContainer = document.getElementById('list-container');
+            let inputBox = document.getElementById('input-box');
+            if (inputBox.value == '') {
+                alert('Add Your Task');
+                console.log("hi");
+            }
+            else {
+                let task = document.createElement('li');
+                task.textContent = inputBox.value;
+                listContainer.append(task);
+
+                let span = document.createElement('span');
+                span.textContent = '\u00d7';
+                task.append(span);
+            }
+            inputBox.value = '';
+
+        });
+         let listContainer = document.getElementById('list-container');
+        listContainer.addEventListener('click', (el) => {
+            if (el.target.tagName == 'LI')
+                el.target.classList.toggle('checked');
+            else if (el.target.tagName == 'SPAN')
+                el.target.parentElement.remove();
+        })
+    </script>
+</body>
+
+</html>
